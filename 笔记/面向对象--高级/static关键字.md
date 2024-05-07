@@ -16,6 +16,32 @@
 class Chinese{
     String name;
     int age;
+    static String nation; //民族
+    public Chinese(String name,int age){
+        this.name = name;
+        this.age = age;
+    }
+        @Override
+    public String toString() {
+        return "Chinese{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
+public class StaticTest{
+    public static void main(String []args){
+        Chinese c1 = new Chinese("张三",40);
+        Chinese c2 = new Chinese("李四",30);
+        c1.nation = "China";
+        System.out.println(c1);
+        System.out.println(c2);
+        System.out.println(c1.nation); 
+        System.out.println(c2.nation); 
+    }
+}
+//c1.nation : China
+//c2.nation : China
+//只赋值c1的nation,所有Chinese类的nation属性都是China
 ````
 

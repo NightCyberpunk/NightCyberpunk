@@ -300,5 +300,144 @@ enum Season {
   窗含西岭千秋雪
   ````
 
+  ## 练习
+  
+  >定义Employee类，表示员工信息。
+  >
+  >定义枚举类Status,表示员工状态
+  
+  ````java
+  class Employee{
+      private String name;
+      private int age;
+      private Status status;
+      
+      public Employee(){
+          
+      }
+      public Employee(String name,int age,Status status){
+          this.name = name;
+          this.age = age;
+          this.status = status;
+      }
+      public void setName(String name){
+          this.name = name;
+      }
+      public void setAge(int age){
+          this.age = age;
+      }
+      public void setStatus(Status status){
+          this.status = status;
+      }
+      public String getName(){
+          return this.name;
+      }     
+      public int getAge(){
+          return this.age;
+      }
+      public Status getStatus(){
+          return this.status;
+      }
+          @Override
+      public String toString() {
+          return "Employee{" +
+                  "name='" + name + '\'' +
+                  ", age=" + age +
+                  ", status=" + status +
+                  '}';
+      }
+  }
+  enum Status{
+      BUSY,FREE,VOCATION,DIMISSION;
+  }
+  
+  public class EmployeeTest{
+      public static void main(String []args){
+          Employee e1 = new Employee("Tom",21,Status.BUSY);
+          System.out.println(e1.toString());
+      }
+  }
+  //输出结果
+  Employee{name='TOM', age=21, status=BUSY}
+  ````
+  
+  >使用枚举类实现单例模式
+  
+  ````java
+  //jdk 5.0之前，使用枚举类实现单例模式
+  class Bank{
+      private Bank(){}
+      public static final Bank instance = new Bank();	//使用final，不能更改instance的内容
+  }	
+  //jdk5.0 使用enum 枚举类实现单例模式
+  class Bank{
+      CPB;
+  }
+  class GirlFriend{
+      XIAO_LI(20);
+      private final int age;
+      private GirlFriend(int age){
+          this.age = age;
+      }
+  }
+  ````
+  
+  >定义颜色枚举类Color
+  >
+  >声明final修饰的Int类型的属性red,green,blue  即RGB
+  >
+  >声明final修饰的String类型的属性description
+  >
+  >声明带参构造器
+  >
+  >创建七个常量对象（七个颜色）
+  >
+  >重写toString方法
+  
+  ````java
+  public class ColorTest {
+      public static void main(String[] args) {
+          Color []colors = Color.values();
+          for (int i = 0; i < colors.length; i++) {
+              System.out.println(colors[i]);
+          }
+      }
+  }
+  enum Color{
+      RED(255,0,0,"红色"),
+      ORANGE(255,128,0,"橙色"),
+      YELLOW(255,255,0,"黄色"),
+      GREEN(0,255,0,"绿色"),
+      CYAN(0,255,255,"青色"),
+      BLUE(0,0,255,"蓝色"),
+      PURPLE(128,0,255,"紫色");
+      private final int red;
+      private final int greed;
+      private final int blue;
+      private final String description;   //颜色的描述
+  
+      Color(int red, int greed, int blue, String description) {
+          this.red = red;
+          this.greed = greed;
+          this.blue = blue;
+          this.description = description;
+      }
+  
+      public String toString() {
+          return super.toString()+"("+red+","+green+","+blue+")"+"——>"+description+")";
+          //super.toString()表示父类的toString()方法，即未重写之前的toString方法
+      }
+      
+  }
+  //输出效果
+  RED(255,0,0)——>红色)
+  ORANGE(255,128,0)——>橙色)
+  YELLOW(255,255,0)——>黄色)
+  GREEN(0,255,0)——>绿色)
+  CYAN(0,255,255)——>青色)
+  BLUE(0,0,255)——>蓝色)
+  PURPLE(128,0,255)——>紫色)
+  ````
+  
   
 

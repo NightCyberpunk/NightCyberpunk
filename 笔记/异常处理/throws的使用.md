@@ -15,6 +15,9 @@ throw new 异常类名(参数);
 ## 举例
 
 ````java
+//导包省略
+
+
 public class ThrowTest {
     public static void main(String[] args) {
         method3();
@@ -29,10 +32,10 @@ public class ThrowTest {
             e.printStackTrace();
         }
     }
-    public void method2() throws FileNotFoundException,IOException{ //再次手动抛出异常
+    public void method2() throws FileNotFoundException,IOException{ //再次抛出异常
         method1();	//调用method1()
     }
-    public void method1() throws FileNotFoundException, IOException {	//手动抛出异常，抛给调用者
+    public void method1() throws FileNotFoundException, IOException {	//抛出异常，抛给调用者
         File file = new File("D:\\hello.txt");
         FileInputStream fis = new FileInputStream(file);    //可能报错FileNotFoundException
         int data = fis.read();  //可能报错IOException
@@ -61,6 +64,7 @@ public class ThrowTest {
 >
 >子类重写的方法抛出的异常类型可以与父类被重写的方法抛出的异常类型相同，或者式父类被重写的方法抛出的异常类型的子类
 >
+>**针对于编译时异常，一般是为了满足语言的自洽**
 
 ````java
 import java.io.FileNotFoundException;
@@ -70,9 +74,23 @@ class Father{
         
     }
 }
+class Son1 extends Father{
+    public void method1() throws IOException{
+        
+    }
+}
+class Son2 extends Father{
+    public void method1() throws Exception{	//错误的，抛出的异常类型不能比父类抛出的异常大（子类父类之间大小关系）
+        
+    }
+}
 ````
 
+##  两种异常处理方式的选择
 
+前提：对于异常，使用相应的处理方式。此时的异常，主要指的是编译时异常。
 
-
+- 如果程序代码中，涉及到资源的调用（流、数据库连接、网络连接等），则必须考虑使用try-catch-finally来处理，保证不出现内存泄漏。
+- 如果父类被重写的方法没有throws异常类型，则子类重写的方法中如果出现异常，只能考虑使用try-catch-finally进行处理，不能throws。
+- 开发中，方法a中依次调用了方法b,c,d等方法，方法b,c,d之间是递进关系。此时，如果方法b,c,d中有异常，我们通常选择使用throws，而方法a中通常选择使用try-catch-finally。
 

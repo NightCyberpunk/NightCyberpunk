@@ -39,6 +39,8 @@ Thread类中有一些方法，可以使得方便线程的使用
 
   源码声明为`public static void sleep(long millis)`
 
+  ==`sleep`是静态方法，不论是对象还是类调用都没有区别，都是对当前类进行堵==
+
 * `yield()` 静态方法，一旦执行此方法，就释放CPU的执行权
 
   源码声明为`public static void yield()`

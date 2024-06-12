@@ -1,34 +1,34 @@
 #### 1. 编辑类快捷键
 
-| 编辑类快捷键           | 介绍                                     |
-| ---------------------- | ---------------------------------------- |
-| psvm + Tab             | 生成main方法                             |
-| sout + tab             | 生成输出语句                             |
-| Ctrl+X / Ctrl + Y      | 删除一行                                 |
-| Ctrl+D                 | 复制一行                                 |
-| Ctrl+/ 或 Ctrl+Shift+/ | 注释代码                                 |
-| Ctrl + Z               | 撤销                                     |
-| Ctrl + Shift + Z       | 取消撤销                                 |
-| Ctrl + C               | 复制                                     |
-| Ctrl + V               | 粘贴                                     |
-| Ctrl + O               | 重写方法                                 |
-| Ctrl + I               | 实现方法                                 |
-| Ctr + shift + U        | 大小写转化                               |
-| Ctrl + Shift + J       | 整合两行为一行                           |
-| Ctrl + Shift + space   | 自动补全代码                             |
-| Alt + 回车             | 导入包,自动修正                          |
-| Alt + /                | 代码提示                                 |
-| Alt + Insert           | 生成代码(如GET,SET方法,构造函数等)       |
-| Ctrl + Alt + L         | 格式化代码                               |
-| Ctrl + Alt + I         | 自动缩进                                 |
-| Ctrl + Alt + T         | 生成try catch                            |
-| Ctrl + Alt + O         | 优化导入的类和包                         |
-| fori                   | 生成for循环for (int i = 0; i< ; i++) { } |
-| iter                   | 生成增强for循环                          |
-| itar                   | 生成array for代码块                      |
-| itit                   | 生成iterator 迭代                        |
-| itli                   | 生成List的遍历                           |
-| itco                   | 生成Collection迭代                       |
+| 编辑类快捷键           | 介绍                                      |
+| ---------------------- | ----------------------------------------- |
+| psvm + Tab             | 生成main方法                              |
+| sout + tab             | 生成输出语句                              |
+| Ctrl+X / Ctrl + Y      | 删除一行                                  |
+| Ctrl+D                 | 复制一行                                  |
+| Ctrl+/ 或 Ctrl+Shift+/ | 注释代码                                  |
+| Ctrl + Z               | 撤销                                      |
+| Ctrl + Shift + Z       | 取消撤销                                  |
+| Ctrl + C               | 复制                                      |
+| Ctrl + V               | 粘贴                                      |
+| Ctrl + O               | 重写方法                                  |
+| Ctrl + I               | 实现方法                                  |
+| Ctr + shift + U        | 大小写转化                                |
+| Ctrl + Shift + J       | 整合两行为一行                            |
+| Ctrl + Shift + space   | 自动补全代码                              |
+| Alt + 回车             | 导入包,自动修正                           |
+| Alt + /                | 代码提示                                  |
+| Alt + Insert           | 生成代码(如GET,SET方法,构造函数等)        |
+| Ctrl + Alt + L         | 格式化代码                                |
+| Ctrl + Alt + I         | 自动缩进                                  |
+| Ctrl + Alt + T         | 包围选中的区域代码，（可用于try\catch等） |
+| Ctrl + Alt + O         | 优化导入的类和包                          |
+| fori                   | 生成for循环for (int i = 0; i< ; i++) { }  |
+| iter                   | 生成增强for循环                           |
+| itar                   | 生成array for代码块                       |
+| itit                   | 生成iterator 迭代                         |
+| itli                   | 生成List的遍历                            |
+| itco                   | 生成Collection迭代                        |
 
 #### 2. 查找、替换类快捷键
 

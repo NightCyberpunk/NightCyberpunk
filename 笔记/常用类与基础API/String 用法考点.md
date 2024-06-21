@@ -407,7 +407,7 @@ String str6 = new String(bytes,"GBK");
   }
   ````
 
-##### 字符串的截取
+##### 字符串的截取相关方法
 
 ````java
 （16）String substring(int beginIndex) ：返回一个新的字符串，它是此字符串的从beginIndex开始截取到最后的一个子字符串。 
@@ -428,7 +428,7 @@ String str6 = new String(bytes,"GBK");
   }
   ````
 
-##### 和字符/字符数组相关
+##### 和字符/字符数组相关方法
 
 ````java
 （18）char charAt(index)：返回[index]位置的字符
@@ -452,13 +452,108 @@ String str6 = new String(bytes,"GBK");
   }
   ````
 
-  
-
 * `char[] toCharArray()` 将此字符串转换为一个新的字符数组并返回
+
+  ````java
+  public class StringTest{
+      public static void main(String []args){
+          String s1 = "123";
+          char []c1 = s1.toCharArray();
+          for(int i = 0; i < c1.length; i++){
+              System.out.println(c1[i]);
+          }
+      }
+  }
+  //输出结果
+  //1
+  //2
+  //3
+  ````
+
+  
 
 * `static String valueOf(char[] data)` 返回指定数组中表示该字符序列的`String `
 
 * `static String valueOf(char[] data ,int offset, int count )` 
+
+* `static String copyValueOf(char[] data)`
+
+* `static String copyValueOf(char[] data, int offset, int count)`
+
+  ````java
+  public class StringTest{
+      public static void main(String []args){
+          char []c1 = {'J','a','v','a'};
+          String s1 = String.valueOf(c1);
+          String s2 = String.copyValueOf(c1);
+          System.out.println(s1);			//Java
+          System.out.println(s2);			//Java
+          System.out.println(s1 == s2);;	//false
+      }
+  }
+  ````
+
+##### 开头结尾相关方法
+
+````java
+（24）boolean startsWith(xx)：测试此字符串是否以指定的前缀开始 
+（25）boolean startsWith(String prefix, int toffset)：测试此字符串从指定索引开始的子字符串是否以指定前缀开始
+（26）boolean endsWith(xx)：测试此字符串是否以指定的后缀结束 
+````
+
+* `boolean starstWith(xx)` : 测试此字符串是否以指定的前缀开始
+
+* `boolean startsWith(String prefix, int toffset)` : 测试此字符串从指定索引开始的子字符串是否以指定前缀开始
+
+* `boolean endWith(xx)` : 测试此字符串是否以指定的后缀结束
+
+  ````java
+  public class StringTest{
+      public static void main(String []args){
+          String s1 = "Java";
+          System.out.println(s1.startsWith("Ja"));    //true
+          System.out.println(s1.startsWith("J"));     //true
+          System.out.println(s1.startsWith("C++"));   //false
+          System.out.println(s1.endsWith("va"));      //true
+          System.out.println(s1.endsWith("a"));       //true
+          System.out.println(s1.endsWith("C"));       //false
+      }
+  }
+  ````
+
+##### 替换相关方法
+
+````java
+（27）String replace(char oldChar, char newChar)：返回一个新的字符串，它是通过用 newChar 替换此字符串中出现的所有 oldChar 得到的。 不支持正则。
+（28）String replace(CharSequence target, CharSequence replacement)：使用指定的字面值替换序列替换此字符串所有匹配字面值目标序列的子字符串。 
+（29）String replaceAll(String regex, String replacement)：使用给定的 replacement 替换此字符串所有匹配给定的正则表达式的子字符串。 
+（30）String replaceFirst(String regex, String replacement)：使用给定的 replacement 替换此字符串匹配给定的正则表达式的第一个子字符串。 
+````
+
+* `String replace(char oldChar, char newChar)` 将`newChar`替换所有`oldChar` 并返回字符串
+
+* `String replace(CharSequence target, CharSequence replacement)`
+
+  ````java
+  public class ReplaceTest{
+      public static void main(String []args){
+          String s1 ="hello";
+          System.out.println(s1);
+          String s2 =s1.replace("l","a");
+          String s3 = s1.replace("ll","www");
+          System.out.println(s2);
+          System.out.println(s3);
+      }
+  }
+  //输出结果
+  hello
+  heaao
+  hewwwo
+  ````
+
+* `String replaceAll(String regex, String replacement)`
+
+* `String replaceFirst(String regex, String replacement)`
 
 ### String与常见的其他结构之间的转换
 
